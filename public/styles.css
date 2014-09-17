@@ -1,0 +1,27 @@
+table{
+  border-collapse: collapse;
+  max-width: 100%;
+}
+td{
+  width: 1.5em;
+  height: 1.5em;
+  border: 1px solid black;
+  /*display: inline-block;*/
+}
+#overall-hits {
+  margin: 0 auto;
+  width: 480px;
+  max-width: 50%;
+}
+.number-cell{
+  display:inline-block
+}
+.base-number {
+  font-size: 1em;
+  padding: -0.5em 0.25em 0 0;
+}
+.hit-count {
+  font-size: 0.5em;
+  margin-left: 2em;
+  color: silver;
+}
