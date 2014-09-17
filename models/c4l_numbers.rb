@@ -27,9 +27,9 @@ class Numbers
     dates = response.scan(/\d+\/\d+\/\d+/)
     numbers = response.scan(/\d+\-\d+\-\d+\-\d+\-\d+/)
     bonus = response.scan(/(?=\d{2}<\/td><td valign=\"top\" align=\"center\">)[0]\d{1}/)
-    # results = {}
+    # results = {date: numbers, cash number ball
+    results = {dates: dates, numbers: numbers, bonus: bonus}
     all_hits = []
-    binding.pry
     numbers.map do |line|
       all_hits.push(line.split(/\D+/))
     end

@@ -4,7 +4,7 @@ Bundler.require
 require_relative 'models/c4l_numbers.rb'
 
 get '/' do
-
+  @results = Numbers.retrieve
   @numbers = Numbers.retrieve
   @hits = Numbers.retrieve
   @self = Numbers.sort(@numbers)

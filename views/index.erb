@@ -13,8 +13,11 @@
     </thead>
 
     <tr>
-      <td><%= dates %></td>
-
+      <% @results.each do |line| %>
+      <td>line.dates</td>
+      <td>line.numbers</td>
+      <td>line.bonus</td>
+      <% end %>
     </tr>
   </table>
 
