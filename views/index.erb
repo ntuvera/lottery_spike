@@ -11,14 +11,18 @@
         <td>Cash Ball Number</td>
       </tr>
     </thead>
-
-    <tr>
-      <% @results.each do |line| %>
-      <td>line.dates</td>
-      <td>line.numbers</td>
-      <td>line.bonus</td>
+    <tbody>
+      <% @dates.each_with_index do |line, i| %>
+        <tr>
+          <td><%= line%></td>
+          <td><%= @numbers_res[i]%></td>
+          <td><%= @numbers_bonus[i] %></td>
+        </tr>
       <% end %>
-    </tr>
+
+
+
+    </tbody>
   </table>
 
   <h1>Cash 4 Life Data</h1>
@@ -34,17 +38,21 @@
 </div>
 
 
-<table id="common-hits">
+<table id='common-hits'>
   <thead>
     <tr>Most common hits</tr>
   </thead>
   <tbody>
-    <% @popular.each do |k,v| %>
-      <tr>
+    <tr>
+      <% @popular.each do |k,v| %>
         <td><%= k %></td>
+      <% end %>
+    </tr>
+    <tr>
+      <% @popular.each do |k,v| %>
         <td><%= v %></td>
-      </tr>
-    <% end %>
+        <% end %>
+    </tr>
   </tbody>
 </table>
 
@@ -54,7 +62,14 @@
 
 <table id="number-generator">
   <thead>
+
     <tr>Randomly selected numbers based on hit frequency</tr>
   </thead>
-
+  <tbody>
+    <tr>
+      <% @picks.each do |line| %>
+        <td><%= line %></td>
+      <% end %>
+    </tr>
+  </tbody>
 </table>

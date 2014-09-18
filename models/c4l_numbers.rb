@@ -27,8 +27,6 @@ class Numbers
     dates = response.scan(/\d+\/\d+\/\d+/)
     numbers = response.scan(/\d+\-\d+\-\d+\-\d+\-\d+/)
     bonus = response.scan(/(?=\d{2}<\/td><td valign=\"top\" align=\"center\">)[0]\d{1}/)
-    # results = {date: numbers, cash number ball
-    results = {dates: dates, numbers: numbers, bonus: bonus}
     all_hits = []
     numbers.map do |line|
       all_hits.push(line.split(/\D+/))
@@ -49,5 +47,20 @@ class Numbers
 
   def self.sort(hash)
     @sorted = hash.sort_by { |k,v| v }.reverse
+  end
+
+  #### re-write full results
+
+  def self.results
+    url = "http://www.state.nj.us/lottery/games/1-9_cash4life.shtml"
+    response = HTTParty.get(url)
+    dates = response.scan(/\d+\/\d+\/\d+/)
+    numbers = response.scan(/\d+\-\d+\-\d+\-\d+\-\d+/)
+    bonus = response.scan(/(?=\d{2}<\/td><td valign=\"top\" align=\"center\">)[0]\d{1}/)
+    # results = {}
+    # [09/15/14: {numbers:03-05-11-46-56, bonus:01}]
+
+    results = {dates: dates, numbers: numbers, bonus: bonus}
+    return results
   end
 end
