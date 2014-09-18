@@ -67,7 +67,7 @@
   </thead>
   <tbody>
     <tr>
-      <% @picks.each do |line| %>
+      <% @picks.each_with_index do |line, i| %>
         <td><%= line %></td>
       <% end %>
     </tr>

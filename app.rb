@@ -13,7 +13,10 @@ get '/' do
   @self = Numbers.sort(@numbers)
   @popular = Numbers.sort(@numbers).first(10)
   @picks =[]
-binding.pry
+
+  @pop = Numbers.sort(@numbers).first(20).map { |k,v| k }
+  5.times {@picks.push(@pop.sample(5).uniq.sort)}
   # @picks.push(5.times { Numbers.sort(@numbers).first(20).sample[0]) })
+binding.pry
   erb :index
 end
