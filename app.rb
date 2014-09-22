@@ -14,7 +14,7 @@ get '/' do
   @popular = Numbers.sort(@numbers).first(10)
   @picks =[]
 
-  @pop = Numbers.sort(@numbers).first(20).map { |k,v| k }
+  @pop = Numbers.sort(@numbers).first(12).map { |k,v| k }
   5.times {@picks.push(@pop.sample(5).uniq.sort)}
   # @picks.push(5.times { Numbers.sort(@numbers).first(20).sample[0]) })
 binding.pry
