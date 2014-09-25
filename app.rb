@@ -17,6 +17,6 @@ get '/' do
   @pop = Numbers.sort(@numbers).first(12).map { |k,v| k }
   5.times {@picks.push(@pop.sample(5).uniq.sort)}
   # @picks.push(5.times { Numbers.sort(@numbers).first(20).sample[0]) })
-binding.pry
+# binding.pry
   erb :index
 end
